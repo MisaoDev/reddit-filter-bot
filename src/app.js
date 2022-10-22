@@ -7,7 +7,6 @@ import TEXT from './messages.js'
 import { amMentioned, getOptions } from './parsing.js'
 import imgur from 'imgur'
 const { ImgurClient } = imgur
-import { createReadStream } from 'fs'
 
 dotenv.config()
 
@@ -46,9 +45,6 @@ comments.on('item', async (comment) => {
 
   const post = await reddit.getSubmission(comment.link_id).fetch()
 
-  // console.log(comment.body)
-  // console.log('Hint:', post.post_hint)
-
   if (post.post_hint !== 'image') {
     console.log('not an image!')
     return comment.reply(TEXT.NOT_AN_IMAGE)
@@ -60,8 +56,6 @@ comments.on('item', async (comment) => {
 
   const buffer = Buffer.from(await res.arrayBuffer())
   let image = await sharp(buffer)
-
-  // console.log(options)
 
   const filterOptions = {}
   options.forEach((option) => {
