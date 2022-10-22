@@ -23,7 +23,7 @@ const reddit = new Snoowrap({
 const BOT_START_DATE = Date.now() / 1000
 
 const comments = new CommentStream(reddit, {
-  subreddit: 'testingground4bots',
+  subreddit: process.env.SUBREDDIT_STRING,
   limit: 10,
   pollTime: 2000,
 })
