@@ -1,0 +1,25 @@
+{
+  "name": "reddit-filter-bot",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "https://github.com/MisaoDev/reddit-filter-bot.git",
+  "author": "MisaoDev <69985862+MisaoDev@users.noreply.github.com>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "imgur": "^2.2.0",
+    "node-fetch": "^3.2.10",
+    "sharp": "^0.31.1",
+    "snoostorm": "^1.5.2",
+    "snoowrap": "^1.23.0",
+    "tslib": "^2.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0"
+  }
+}
