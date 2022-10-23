@@ -1,5 +1,5 @@
 export const amMentioned = (msg) => {
-  return msg?.match(/[uU]\/ImageFilterBot/g)
+  return msg?.toLowerCase().match(/u\/imagefilterbot/g)
 }
 
 /**
@@ -15,7 +15,7 @@ export const amMentioned = (msg) => {
  *            ]
  */
 export const getOptions = (msg) => {
-  const args = msg.match(/^!FilterThisImage(?:\s(.+))?/)
+  const args = msg.match(/^!FilterThisImage(?:\s(.+))?\n?/)
   if (!args) return null
   if (!args[1]) return []
   const matches = [...args[1].matchAll(/(?:^|\s)([a-zA-Z]+)\s+(-?[0-9%]+)/g)]

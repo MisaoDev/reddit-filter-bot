@@ -25,7 +25,7 @@ const BOT_START_DATE = Date.now() / 1000
 const comments = new CommentStream(reddit, {
   subreddit: process.env.SUBREDDIT_STRING,
   limit: 10,
-  pollTime: 2000,
+  pollTime: 3000,
 })
 
 comments.on('item', async (comment) => {
@@ -88,7 +88,8 @@ comments.on('item', async (comment) => {
     type: 'stream',
   })
   if (!res.success) {
-    console.log('error al subir la imagen')
+    console.log('error while uploading to imgur')
+    console.log(res)
     return comment.reply(TEXT.ERROR_UPLOADING)
   }
 
